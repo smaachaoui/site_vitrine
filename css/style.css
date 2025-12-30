@@ -1,0 +1,346 @@
+/* Mémo technique pour les unités de mesure en CSS :
+
+    - rem  : textes, titres, marges et paddings globaux (accessibilité)
+    - em   : composants dépendants du texte (boutons, badges, cards)
+    - px   : bordures, séparateurs, ombres, détails fins
+    - %    : largeurs fluides, images responsives
+    - vw/vh: sections plein écran, hero, layouts liés au viewport
+
+    rem :  1rem = taille de la police racine (généralement 16px)
+    em  :  1em  = taille de la police de l'élément parent
+    px  :  1px  = 1 pixel fixe
+    %   :  largeur/hauteur en pourcentage par rapport à l'élément parent
+    vw  :  1vw  = 1% de la largeur du viewport
+    vh  :  1vh  = 1% de la hauteur du viewport
+*/
+
+/* Les bonnes pratiques pour les unités de mesure en CSS :
+
+    Espace = rem
+    Texte  = rem
+    Composant = em
+    Précision = px
+    Fluidité = %
+    Plein écran = vw / vh
+*/
+
+/* Mémo technique pour les positions CSS :
+
+    static   : position par défaut dans le flux normal
+    relative : positionné par rapport à sa position normale
+    absolute : positionné par rapport à l'ancêtre positionné le plus proche
+    fixed    : positionné par rapport au viewport
+    sticky   : bascule entre relative et fixed selon le scroll
+
+    top, right, bottom, left : décalages
+    z-index : ordre de superposition
+*/
+
+/* Mémo technique pour les floats CSS :
+
+    float       : flottement gauche/droite
+    clear       : stoppe le flottement
+    clearfix    : contient les floats
+*/
+
+
+/* RÈGLES GLOBALES / RESET */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    line-height: 1.4;
+    letter-spacing: 0.2px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+h1, h2, h3{
+    margin: 0.75rem 0;
+    text-align: center;
+}
+
+
+/* STRUCTURE PRINCIPALE */
+
+main{
+    padding: 0 0;
+}
+
+
+/* HEADER / NAVIGATION */
+
+.header{
+    background-color: rgb(6, 6, 6);
+    padding: 1.25rem;
+    height: auto;
+}
+
+.navbar{
+    margin: 1rem 0;
+    text-align: center;
+}
+
+.navbar a{
+    color: white;
+    text-decoration: none;
+    padding: 0 10px;
+}
+
+.navbar a:hover{
+   color: rgb(103, 166, 247);
+}
+
+
+/* BANNIÈRE */
+
+.banner img{
+    width: 100%;
+    height: auto;
+}
+
+
+/* SECTIONS / GRILLES */
+
+
+
+/* ACCUEIL */
+
+.home-section{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    padding: 1.25rem;
+}
+
+/* 
+L'attribut grid-column permet de définir le positionnement d'un élément dans une grille CSS.
+On indique que le titre h2 doit s'étendre de la première à la dernière colonne de la grille.
+*/
+
+
+.home-section h2{
+    grid-column: 1 / -1;
+}
+
+/* SÉLECTION */
+
+.selection-section{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1.25rem;
+    padding: 1.25rem;
+}
+
+/* 
+L'attribut flex-basis permet de forcer un élément qui a pour parent un conteneur flex à occuper toute la largeur disponible.
+On indique que le titre h1 doit occuper toute la largeur disponible.
+*/
+.selection-section h1{
+    flex-basis: 100%;
+    margin-bottom: 1rem;
+}
+
+.selection-section article{
+    width: 400px;
+    padding: 1.25rem;
+}
+
+.selection-section p{
+    font-size: 1rem;
+    letter-spacing: 0.2px;
+    text-align: center;
+
+}
+
+
+/* À PROPOS */
+.about-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 1.25rem;
+}
+
+.about-section h1{
+    margin-bottom: 1rem;
+}
+
+.about-section p{
+    max-width: 600px;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.about-section address{
+    font-size: 1rem;
+    text-align: left;
+}
+
+
+/* ÉVÉNEMENTS */
+
+.events-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 1.25rem;
+}
+
+.events-section h1{
+    margin-bottom: 1rem;
+}
+
+.events-section p{
+    max-width: 600px;
+    text-align: center;
+}
+
+/* TABLEAU */
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+table, th, td{
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+}
+
+table th{
+    background-color: rgb(240, 240, 240);
+    text-align: left;
+}
+
+table button{
+    padding: 0.50rem 1rem;
+    border: none;
+    background-color: rgb(6, 6, 6);
+    color: white;
+    cursor: pointer;
+}
+
+/* CONTACT */
+.contact-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 1.25rem;
+}
+
+.contact-section h1{
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.contact-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+
+    width: 100%;
+    padding: 1.25rem;
+    max-width: 500px;
+    border: 1px solid #ddd;
+}
+
+.field-group{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.field-group label{
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+.field-group input,
+.field-group textarea{
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+.contact-form button{
+    width: 150px;
+    height: auto;
+    padding: 0.60rem;
+    border: none;
+    background-color: rgb(6, 6, 6);
+    color: white;
+    cursor: pointer;
+}
+
+
+
+/* ARTICLES  */
+
+article{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 1.25rem;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+article h3{
+    margin: 0.75rem 0;
+    font-size: 1.10rem;
+}
+
+article img{
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+}
+
+article dl{
+    width: 100%;
+    text-align: center;
+}
+
+article dt{
+    font-weight: bold;
+}
+
+article button{
+    width: 120px;
+    height: auto;
+    padding: 0.60rem;
+    margin-top: 0.75rem;
+    border: none;
+    background-color: rgb(6, 6, 6);
+    color: white;
+    cursor: pointer;
+}
+
+
+/* FOOTER */
+
+footer{
+    background-color: rgb(6, 6, 6);
+    text-align: center;
+    padding: 2.3rem;
+}
+
+footer p{
+    color: white;
+    font-size: 0.950rem;
+}
