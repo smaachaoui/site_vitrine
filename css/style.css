@@ -270,6 +270,12 @@ article button{
     grid-template-columns: repeat(2, 1fr);
     gap: 1.25rem;
     padding: 1rem;
+    color: white;
+
+    border: 0.4px solid black;
+    border-radius: 10px;
+    background-color: #0e2146;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 .about-section address{
