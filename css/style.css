@@ -68,6 +68,8 @@ body{
 
 main{
     flex: 1;
+    width: 100%;
+    background-color: rgb(115, 155, 229);
 }
 
 h1, h2, h3{
@@ -75,7 +77,19 @@ h1, h2, h3{
     text-align: center;
 }
 
+
+/* ÉLÉMENTS GÉNÉRIQUES */
+
+button{
+    border: none;
+    background-color: rgb(6, 6, 6);
+    color: white;
+    cursor: pointer;
+}
+
+
 /* IMAGES */
+
 .banner img,
 article img{
     width: 100%;
@@ -86,31 +100,128 @@ article img{
     max-width: 250px;
 }
 
+
+/* TABLEAU */
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    background-color: #ccc;
+}
+
+th, td{
+    padding: 0.75rem;
+    border: 0.5px solid black;
+}
+
+table th{
+    background-color: rgb(240, 240, 240);
+    text-align: center;
+}
+
+
 /* HEADER & NAVIGATION */
 
 .header{
-    background-color: rgb(6, 6, 6);
+    background-color: rgb(14, 33, 70);
     padding: 1.25rem;
+    width: 100%;
 }
 
 .navbar{
     margin: 1rem 0;
-    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
 }
 
 .navbar a{
     color: white;
     text-decoration: none;
+    font-size: 1.2rem;
     padding: 0 10px;
 }
 
 .navbar a:hover{
-   color: rgb(103, 166, 247);
+   color: rgb(255, 181, 70);
 }
+
+
+/* BANNER */
+
+.banner{
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    opacity: 0.9;
+}
+
+.banner h1{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+
+/* LES ARTICLES */
+
+article{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 1.25rem;
+    border: 1px solid #171717;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+article h3{
+    margin: 0.75rem 0;
+    font-size: 1.10rem;
+}
+
+article dl{
+    width: 100%;
+    text-align: center;
+}
+
+article dt{
+    font-weight: bold;
+}
+
+
+/* LES BOUTONS */
+
+/* Variantes */
+table button{
+    padding: 0.50rem 1rem;
+}
+
+article button{
+    width: 120px;
+    height: auto;
+    padding: 0.60rem;
+    margin-top: 0.75rem;
+}
+
+.contact-form button{
+    width: 150px;
+    height: auto;
+    padding: 0.60rem;
+}
+
 
 /* SECTIONS */
 
-/* Disposition en colonne */
 .about-section,
 .events-section,
 .contact-section{
@@ -121,37 +232,69 @@ article img{
     padding: 1.25rem;
 }
 
-/* Les paragraphes */
-
 .about-section p,
 .events-section p{
     max-width: 600px;
     text-align: center;
 }
 
-.about-section address{
-    font-size: 1rem;
-    text-align: left;
-}
-
-.about-section p{
-    font-size: 1rem;
-}
-
-/*  LES SECTIONS DE LA PAGE D'ACCUEIL */
-
-.home-section{
+.container-description{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 1rem;
+}
+
+.description{
+    padding: 0.760rem;
+    border: 0.4px solid black;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.description:hover{
+    transform: scale(0.9);
+    transition: transform 0.5s;
+}
+
+.description p{
+    padding: 1rem;
+    font-size: 1rem;
+}
+
+.location{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+    padding: 1rem;
+}
+
+.about-section address{
+    font-size: 1rem;
+    text-align: center;
+}
+
+
+/* LES SECTIONS DE LA PAGE D'ACCUEIL */
+
+.home-section{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 1.25rem;
     padding: 1.25rem;
 }
 
+/* L'attribut grid-column permet de faire occuper un élément sur plusieurs colonnes, ici 1 correspond à la première colonne et -1 à la dernière colonne */
 .home-section h2{
     grid-column: 1 / -1;
 }
 
-/*  LA SECTION DE LA PAGE SÉLECTION */
+
+/* LA SECTION DE LA PAGE SÉLECTION */
 
 .selection-section{
     display: flex;
@@ -160,7 +303,7 @@ article img{
     gap: 1.25rem;
     padding: 1.25rem;
 }
-
+/* L'attribut flex-basis permet de définir la taille initiale d'un élément avant que l'espace restant ne soit distribué, 100% signifie que l'élément occupe toute la largeur disponible */
 .selection-section h1{
     flex-basis: 100%;
     margin-bottom: 1rem;
@@ -168,7 +311,7 @@ article img{
 
 .selection-section article{
     width: 400px;
-    padding: 1.25rem; /* conservé */
+    padding: 1.25rem;
 }
 
 .selection-section p{
@@ -177,23 +320,6 @@ article img{
     text-align: center;
 }
 
-/* TABLEAU DE LA PAGE ÉVÉNEMENTS */
-
-table{
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 1rem;
-}
-
-th, td{
-    padding: 0.75rem;
-    border: 1px solid #ddd;
-}
-
-table th{
-    background-color: rgb(240, 240, 240);
-    text-align: center;
-}
 
 /* LA SECTION DE LA PAGE DE CONTACT */
 
@@ -232,66 +358,14 @@ table th{
     font-size: 1rem;
 }
 
-/* LES ARTICLES */
-
-article{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-
-    padding: 1.25rem;
-    border: 1px solid #ddd;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-article h3{
-    margin: 0.75rem 0;
-    font-size: 1.10rem;
-}
-
-article dl{
-    width: 100%;
-    text-align: center;
-}
-
-article dt{
-    font-weight: bold;
-}
-
-/* LES BOUTONS  */
-
-button{
-    border: none;
-    background-color: rgb(6, 6, 6);
-    color: white;
-    cursor: pointer;
-}
-
-/* Variantes */
-table button{
-    padding: 0.50rem 1rem;
-}
-
-article button{
-    width: 120px;
-    height: auto;
-    padding: 0.60rem;
-    margin-top: 0.75rem;
-}
-
-.contact-form button{
-    width: 150px;
-    height: auto;
-    padding: 0.60rem;
-}
 
 /* FOOTER */
 
 footer{
-    background-color: rgb(6, 6, 6);
+    background-color: rgb(14, 33, 70);
     text-align: center;
     padding: 2.3rem;
+    width: 100%;
 }
 
 footer p{
@@ -299,13 +373,35 @@ footer p{
     font-size: 0.950rem;
 }
 
+
+/* ANIMATIONS */
+
+/* L'attribut transform permet de modifier l'apparence d'un élément, ici j'utilise scale pour agrandir l'élément au survol
+    Et l'attribut transition permet de définir la durée et le type de transition pour une propriété spécifique (ici transform)
+*/
+
+article button:hover{
+    transform: scale(1.2);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s;
+}
+
+
 /* RESPONSIVE DESIGN */
 
 /* Tablette */
 @media (max-width: 1023px){
 
     .home-section{
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .container-description{
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .location{
+        grid-template-columns: 1fr;
     }
 
     .selection-section{
@@ -332,6 +428,10 @@ footer p{
         text-align: center;
     }
 
+    .description:nth-child(1){
+        grid-column: 1/-1;
+    }
+
     .about-section address{
         text-align: center;
     }
@@ -339,6 +439,7 @@ footer p{
     .about-section iframe{
         width: 100%;
         height: auto;
+        max-width: 100%;
     }
 
     .events-section{
@@ -349,6 +450,7 @@ footer p{
         font-size: 0.9rem;
     }
 }
+
 
 /* Mobile */
 @media (max-width: 767px){
@@ -374,20 +476,34 @@ footer p{
         padding: 0.5rem 0.5rem;
     }
 
+    main{
+        margin-top: 50px;
+    }
+
+    .banner{
+        height: 140px;
+    }
+
+    .banner h1{
+        font-size: 1.2rem;
+    }
+
     .home-section{
         grid-template-columns: 1fr;
     }
 
-    /* Si header fixed : décalage du contenu
-       (valeur à ajuster selon la hauteur réelle du header) */
-    main{
-        margin-top: 50px;
+    .container-description{
+        grid-template-columns: 1fr;
+    }
+
+    .location{
+        grid-template-columns: 1fr;
     }
 
     .selection-section{
         display: flex;
         flex-direction: column;
-        padding: 1.25rem 0.625rem;
+        padding: 1.25rem 0.600rem;
     }
 
     .selection-section article{
@@ -399,7 +515,7 @@ footer p{
     }
 
     .about-section{
-        padding: 1.25rem 0.625rem;
+        padding: 1.25rem 0.600rem;
     }
 
     .about-section p{
@@ -409,9 +525,9 @@ footer p{
     .about-section iframe{
         width: 100%;
         height: auto;
+        max-width: 100%;
     }
 
-    /* IMPORTANT : évite la table centrée trop étroite */
     .events-section{
         align-items: stretch;
     }
@@ -421,7 +537,9 @@ footer p{
     }
 
     .events-section th:nth-child(4),
-    .events-section td:nth-child(4){
+    .events-section td:nth-child(4),
+    .events-section th:nth-child(3),
+    .events-section td:nth-child(3){
         display: none;
     }
 }
