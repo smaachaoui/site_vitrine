@@ -1,3 +1,7 @@
+/* ============================================================================
+   MÉMOS TECHNIQUES
+   ============================================================================ */
+
 /* Mémo technique pour les unités de mesure en CSS :
 
     - rem  : textes, titres, marges et paddings globaux (accessibilité)
@@ -43,17 +47,20 @@
     clearfix    : contient les floats
 */
 
-/* LES RÈGLES DE STYLE GÉNÉRALES */
+
+/* RÈGLES GÉNÉRALES */
 
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 }
+
 html {
 	scroll-behavior: smooth;
 	height: 100%;
 }
+
 body {
 	display: flex;
 	flex-direction: column;
@@ -62,48 +69,61 @@ body {
 	letter-spacing: 0.2px;
 	font-family: 'Times New Roman', Times, serif;
 }
+
 main {
 	flex: 1;
 	width: 100%;
 	background-color: #d0ba95;
 }
+
+
+/* TYPOGRAPHIE */
+
 h1, h2, h3 {
 	margin: 0.75rem 0;
 	text-align: center;
 }
+
+
 /* LES ÉLÉMENTS GÉNÉRIQUES */
 
+/* Boutons génériques */
 button {
 	border: none;
 	background-color: rgb(6, 6, 6);
 	color: white;
 	cursor: pointer;
 }
-/* IMAGES */
 
+/* Images génériques */
 .banner img, article img {
 	width: 100%;
 	height: auto;
 }
+
 article img {
 	max-width: 250px;
 }
-/* TABLEAU */
 
+/* Tableaux génériques */
 table {
 	width: 100%;
 	border-collapse: collapse;
 	margin-top: 1rem;
 	background-color: #ccc;
 }
+
 th, td {
 	padding: 0.75rem;
 	border: 0.5px solid black;
 }
+
 table th {
 	background-color: rgb(240, 240, 240);
 	text-align: center;
 }
+
+
 /* HEADER & NAVIGATION */
 
 .header {
@@ -114,20 +134,24 @@ table th {
 	align-items: center;
 	justify-content: space-between;
 }
+
 .logo {
 	flex-shrink: 0;
 }
+
 .logo img {
 	display: block;
 	width: 70px;
 	height: auto;
 }
+
 .navbar {
 	display: flex;
 	gap: 0.75rem;
 	justify-content: flex-end;
 	flex-wrap: wrap;
 }
+
 .navbar a {
 	color: white;
 	text-decoration: none;
@@ -136,26 +160,30 @@ table th {
 	padding: 0.2rem 0.50rem;
 	margin: 0 1rem;
 }
+
 .navbar a:hover {
 	background-color: #fbbf1b;
 	border-radius: 10px;
 	color: black;
 	cursor: pointer;
 }
+
+
 /* BANNER */
 
 .banner {
 	position: relative;
 	overflow: hidden;
 }
+
 .banner img {
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
 	filter: blur(2px);
 	transform: scale(1.05);
-	/* évite les bords visibles après flou */
 }
+
 .banner h1 {
 	position: absolute;
 	top: 50%;
@@ -167,7 +195,9 @@ table th {
 	text-align: center;
 	text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
 }
-/* LES ARTICLES */
+
+
+/* ARTICLES  */
 
 article {
 	display: flex;
@@ -180,48 +210,97 @@ article {
 	background-color: white;
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
 article h3 {
 	margin: 0.75rem 0;
 	font-size: 1.10rem;
 }
+
 article dl {
 	width: 100%;
 	text-align: center;
 }
+
 article dt {
 	font-weight: bold;
 }
-/* LES BOUTONS */
 
-/* Variantes */
-
-table button {
-	padding: 0.50rem 1rem;
-}
+/* Boutons dans les articles */
 article button {
 	width: 120px;
 	height: auto;
 	padding: 0.60rem;
 	margin-top: 0.75rem;
 }
-.contact-form button {
-	width: 150px;
-	height: auto;
-	padding: 0.60rem;
-}
-/* SECTIONS */
 
-.about-section, .events-section, .contact-section {
+
+/* PAGE ACCUEIL  */
+
+.home-section {
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 1.25rem;
+	padding: 1.25rem;
+}
+
+/* L'attribut grid-column permet de faire occuper un élément sur plusieurs colonnes, 
+   ici 1 correspond à la première colonne et -1 à la dernière colonne */
+.home-section h2 {
+	grid-column: 1 / -1;
+}
+
+
+/*  PAGE NOTRE SÉLECTION */
+
+.selection-section {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	gap: 1.25rem;
+	padding: 1.25rem;
+}
+
+/* L'attribut flex-basis permet de définir la taille initiale d'un élément avant que 
+   l'espace restant ne soit distribué, 100% signifie que l'élément occupe toute la largeur disponible */
+.selection-section h1 {
+	flex-basis: 100%;
+	margin-bottom: 1rem;
+}
+
+.selection-section article {
+	width: 400px;
+	padding: 1.25rem;
+}
+
+.selection-section p {
+	font-size: 1rem;
+	letter-spacing: 0.2px;
+	text-align: center;
+}
+
+
+/* PAGE À PROPOS */
+
+.about-section {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	gap: 1.25rem;
 	padding: 1.25rem;
 }
-.about-section p, .events-section p {
+
+.about-section p {
 	max-width: 600px;
 	text-align: center;
 }
+
+.about-section address {
+	font-size: 1rem;
+	text-align: center;
+}
+
+/* Conteneur des descriptions  */
 .container-description {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
@@ -230,6 +309,8 @@ article button {
 	gap: 1.25rem;
 	padding: 1rem;
 }
+
+/* Cartes de description */
 .description {
 	padding: 0.760rem;
 	border: 0.4px solid black;
@@ -237,14 +318,18 @@ article button {
 	background-color: white;
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
+
 .description:hover {
 	transform: scale(0.9);
 	transition: transform 0.5s;
 }
+
 .description p {
 	padding: 1rem;
 	font-size: 1rem;
 }
+
+/* Bloc localisation (adresse + carte) */
 .location {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
@@ -256,53 +341,44 @@ article button {
 	background-color: #0e2146;
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
-.about-section address {
-	font-size: 1rem;
-	text-align: center;
-}
-/* LES SECTIONS DE LA PAGE D'ACCUEIL */
 
-.home-section {
-	width: 100%;
-	display: grid;
-	grid-template-columns: repeat(3, minmax(0, 1fr));
-	gap: 1.25rem;
-	padding: 1.25rem;
-}
-/* L'attribut grid-column permet de faire occuper un élément sur plusieurs colonnes, ici 1 correspond à la première colonne et -1 à la dernière colonne */
 
-.home-section h2 {
-	grid-column: 1 / -1;
-}
-/* LA SECTION DE LA PAGE SÉLECTION */
+/* PAGE ÉVÉNEMENTS */
 
-.selection-section {
+.events-section {
 	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
+	flex-direction: column;
+	align-items: center;
 	gap: 1.25rem;
 	padding: 1.25rem;
 }
-/* L'attribut flex-basis permet de définir la taille initiale d'un élément avant que l'espace restant ne soit distribué, 100% signifie que l'élément occupe toute la largeur disponible */
 
-.selection-section h1 {
-	flex-basis: 100%;
-	margin-bottom: 1rem;
-}
-.selection-section article {
-	width: 400px;
-	padding: 1.25rem;
-}
-.selection-section p {
-	font-size: 1rem;
-	letter-spacing: 0.2px;
+.events-section p {
+	max-width: 600px;
 	text-align: center;
 }
-/* LA SECTION DE LA PAGE DE CONTACT */
+
+/* Boutons dans les tableaux */
+table button {
+	padding: 0.50rem 1rem;
+}
+
+
+/* PAGE CONTACT  */
+
+.contact-section {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1.25rem;
+	padding: 1.25rem;
+}
 
 .contact-section h1 {
 	margin-bottom: 1rem;
 }
+
+/* Formulaire de contact */
 .contact-form {
 	display: flex;
 	flex-direction: column;
@@ -316,15 +392,18 @@ article button {
 	background-color: #fff;
 	box-shadow: 0 5px 8px rgba(0, 0, 0, 0.5);
 }
+
 .field-group {
 	display: flex;
 	flex-direction: column;
 	width: 100%;
 }
+
 .field-group label {
 	margin-bottom: 0.5rem;
 	font-weight: bold;
 }
+
 .field-group input, .field-group textarea {
 	padding: 0.5rem;
 	border: 1px solid black;
@@ -332,10 +411,20 @@ article button {
 	background-color: #dddddd;
 	font-size: 1rem;
 }
+
 .field-group textarea {
 	background-color: #dddddd;
 }
-/* FOOTER */
+
+/* Bouton du formulaire */
+.contact-form button {
+	width: 150px;
+	height: auto;
+	padding: 0.60rem;
+}
+
+
+/*  FOOTER */
 
 footer {
 	background-color: rgb(14, 33, 70);
@@ -343,83 +432,117 @@ footer {
 	padding: 2.3rem;
 	width: 100%;
 }
+
 footer p {
 	color: white;
 	font-size: 0.950rem;
 }
-/* ANIMATIONS */
 
-/* L'attribut transform permet de modifier l'apparence d'un élément, ici j'utilise scale pour agrandir l'élément au survol
-    Et l'attribut transition permet de définir la durée et le type de transition pour une propriété spécifique (ici transform)
-*/
+
+/* LES ANIMATIONS */
+
+/* L'attribut transform permet de modifier l'apparence d'un élément, ici j'utilise scale 
+   pour agrandir l'élément au survol. L'attribut transition permet de définir la durée 
+   et le type de transition pour une propriété spécifique (ici transform) */
 
 article button:hover {
 	transform: scale(1.2);
 	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 	transition: transform 0.3s;
 }
+
+
 /* RESPONSIVE DESIGN */
 
-/* Tablette */
+/* TABLETTE */
 
 @media (max-width: 1023px) {
+	/* Header & Navigation */
 	.logo img {
 		width: 52px;
 	}
+	
 	.navbar a {
 		font-size: 1rem;
 	}
+	
+	/* Page Accueil */
 	.home-section {
 		grid-template-columns: repeat(2, minmax(0, 1fr));
 	}
-	.container-description {
-		grid-template-columns: repeat(2, 1fr);
-	}
-	.location {
-		grid-template-columns: 1fr;
-	}
+	
+	/* Page Sélection */
 	.selection-section {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 		gap: 1.25rem;
 	}
+	
 	.selection-section h1 {
 		grid-column: 1 / -1;
 	}
+	
 	.selection-section article {
 		width: 100%;
 	}
+	
+	/* Page À propos */
 	.about-section {
 		padding: 1.25rem 0.625rem;
 	}
-	.about-section p, .events-section p {
+	
+	.about-section p {
 		max-width: 100%;
 		text-align: center;
 	}
-	.description:nth-child(1) {
-		grid-column: 1/-1;
-	}
+	
 	.about-section address {
 		text-align: center;
 	}
+	
 	.about-section iframe {
 		width: 100%;
 		height: auto;
 		max-width: 100%;
 	}
+	
+	.container-description {
+		grid-template-columns: repeat(2, 1fr);
+	}
+	
+	.description:nth-child(1) {
+		grid-column: 1/-1;
+	}
+	
+	.location {
+		grid-template-columns: 1fr;
+	}
+	
+	/* Page Événements */
 	.events-section {
 		padding: 1.25rem 0.625rem;
 	}
+	
+	.events-section p {
+		max-width: 100%;
+		text-align: center;
+	}
+	
 	.events-section table {
 		font-size: 0.9rem;
 	}
 }
-/* Mobile */
+
+
+/* MOBILE (max-width: 767px) */
 
 @media (max-width: 767px) {
+	/* Ajustement général */
 	body {
 		padding-top: 45px;
 	}
+	
+	/* Header & Navigation */
 	.header {
 		padding: 0.75rem;
 		position: fixed;
@@ -428,73 +551,100 @@ article button:hover {
 		width: 100%;
 		z-index: 1000;
 	}
+	
 	.logo {
 		display: none;
 	}
+	
 	.navbar {
 		width: 100%;
 		padding: 0;
 		justify-content: center;
 		gap: 0.2rem;
 	}
+	
 	.navbar a {
 		margin: 0;
 		font-size: 0.75rem;
 		padding: 0.2rem 0.2rem;
 	}
+	
+	/* Banner */
 	main {
 		margin-top: 0;
 	}
+	
 	.banner {
 		height: 140px;
 	}
+	
 	.banner img {
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
 		display: block;
 	}
+	
 	.banner h1 {
 		font-size: 1.2rem;
 	}
+	
+	/* Page Accueil */
 	.home-section {
 		grid-template-columns: 1fr;
 	}
-	.container-description {
-		grid-template-columns: 1fr;
-	}
-	.location {
-		grid-template-columns: 1fr;
-	}
+	
+	/* Page Sélection */
 	.selection-section {
 		display: flex;
 		flex-direction: column;
 		padding: 1.25rem 0.600rem;
 	}
+	
 	.selection-section article {
 		width: 100%;
 	}
+	
 	.selection-section p {
 		font-size: 0.9rem;
 	}
+	
+	/* Page À propos */
 	.about-section {
 		padding: 1.25rem 0.600rem;
 	}
+	
 	.about-section p {
 		font-size: 0.9rem;
 	}
+	
 	.about-section iframe {
 		width: 100%;
 		height: auto;
 		max-width: 100%;
 	}
+	
+	.container-description {
+		grid-template-columns: 1fr;
+	}
+	
+	.location {
+		grid-template-columns: 1fr;
+	}
+	
+	/* Page Événements */
 	.events-section {
 		align-items: stretch;
 	}
+	
 	.events-section table {
 		width: 100%;
 	}
-	.events-section th:nth-child(4), .events-section td:nth-child(4), .events-section th:nth-child(3), .events-section td:nth-child(3) {
+	
+	.events-section th:nth-child(4), 
+	.events-section td:nth-child(4), 
+	.events-section th:nth-child(3), 
+	.events-section td:nth-child(3) {
 		display: none;
 	}
 }
