@@ -65,7 +65,7 @@ body {
 main {
 	flex: 1;
 	width: 100%;
-	background-color: rgb(115, 155, 229);
+	background-color: #d0ba95;
 }
 h1, h2, h3 {
 	margin: 0.75rem 0;
