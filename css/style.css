@@ -76,6 +76,14 @@ main {
 	background-color: #d0ba95;
 }
 
+/* iframes responsives (Google Maps, etc.) */
+iframe {
+	width: 100%;
+	height: 300px;
+	border: none;
+	border-radius: 8px;
+}
+
 
 /* TYPOGRAPHIE */
 
@@ -244,7 +252,7 @@ article button {
 	background-color: #fff;
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.20);
 	padding: 0.700rem 0.500rem;
-	border-radius: 15px;
+	border-radius: 10px;
 
 }
 
@@ -287,20 +295,52 @@ article button {
 
 /* Conteneur des descriptions  */
 .container-description {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	gap: 1.25rem;
 	padding: 0.800rem;
 }
 
+
 /* Cartes de description */
 .description {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 	width: 100%;
 	padding: 1.25rem;
+}
+
+.gallery-picture{
+	max-width: 600px;
+	height: auto;
+}
+
+.picture{
+	padding: 0.780rem;
+}
+
+.vertical-line{
+	width: 2px;
+	background-color: #0e2146;
+	height: 200px;
+	margin: 0.600rem;
+}
+
+.infos{
+	background-color: #0e2146;
+	padding: 0 0.700rem;
 	border-radius: 10px;
-	background-color: #10254a;
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+	padding: 1.25rem;
+}
+
+.infos h2 {
+	color: #d6ac63;
+	text-align: center;
+}
+
+.infos p{
+	color: #d6ac63;
+	text-align: left;
+	font-size: 1rem;
+	letter-spacing: 1px;
 }
 
 
@@ -397,6 +437,7 @@ table button {
 	background-color: #0e2146;
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
+
 .location-adress{
 	display: flex;
 	flex-direction: column;
@@ -404,8 +445,6 @@ table button {
 	align-items: center;
 	text-align: center;
 }
-
-
 
 /*  FOOTER */
 
@@ -423,6 +462,20 @@ footer p {
 
 
 /* LES ANIMATIONS */
+
+article:hover{
+	background-color: #3f598c;
+	color: #fbbf1b;
+	border-radius: 10px;
+}
+
+article img:hover{
+	transform: scale(1.1);
+	transition: transform 0.3s ;
+	cursor: pointer;
+	opacity: 85%;
+}
+
 
 /* L'attribut transform permet de modifier l'apparence d'un élément, ici j'utilise scale 
    pour agrandir l'élément au survol. L'attribut transition permet de définir la durée 
@@ -477,14 +530,22 @@ article button:hover {
         text-align: center;
     }
     
-    .container-description {
-        display: grid; 
-        grid-template-columns: repeat(2, 1fr);
+    .description {
+        flex-direction: column; 
     }
+
+	.gallery-picture{
+		max-width: 450px;
+	}
+
+	.vertical-line{
+		display: none;
+	}
+
+	.infos p{
+		font-size: 1rem;
+	}
     
-    .description:nth-child(3) {
-        grid-column: 1/-1;
-    }
 	
 	/* Page Événements */
 	.events-section {
@@ -594,10 +655,22 @@ article button:hover {
 		font-size: 0.9rem;
 	}
 	
-	
-	.container-description {
-		grid-template-columns: 1fr;
+	 .description {
+        flex-direction: column; 
+    }
+
+	.gallery-picture{
+		max-width: 320px;
 	}
+
+	.vertical-line{
+		display: none;
+	}
+
+	.infos p{
+		font-size: 0.750rem;
+	}
+    
 	
 	.location {
 		grid-template-columns: 1fr;
