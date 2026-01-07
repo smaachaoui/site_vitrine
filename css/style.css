@@ -68,20 +68,16 @@ body {
 	line-height: 1.4;
 	letter-spacing: 0.2px;
 	font-family: 'Times New Roman', Times, serif;
+	background: #D0BA95;
+	background: -webkit-linear-gradient(90deg, rgba(208, 186, 149, 1) 0%, rgba(199, 164, 111, 1) 50%, rgba(232, 213, 188, 1) 100%);
+	background: -moz-linear-gradient(90deg, rgba(208, 186, 149, 1) 0%, rgba(199, 164, 111, 1) 50%, rgba(232, 213, 188, 1) 100%);
+	background: linear-gradient(90deg, rgba(208, 186, 149, 1) 0%, rgba(199, 164, 111, 1) 50%, rgba(232, 213, 188, 1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#D0BA95", endColorstr="#E8D5BC", GradientType=1);
 }
 
 main {
 	flex: 1;
 	width: 100%;
-	background-color: #d0ba95;
-}
-
-/* iframes responsives (Google Maps, etc.) */
-iframe {
-	width: 100%;
-	height: 300px;
-	border: none;
-	border-radius: 8px;
 }
 
 
@@ -110,7 +106,7 @@ button {
 }
 
 article img {
-	max-width: 120px;
+	max-width: 100px;
 }
 
 /* Tableaux génériques */
@@ -131,6 +127,13 @@ table th {
 	text-align: center;
 }
 
+/* iframes */
+iframe {
+	width: 100%;
+	height: 300px;
+	border: none;
+	border-radius: 8px;
+}
 
 /* HEADER & NAVIGATION */
 
@@ -181,6 +184,7 @@ table th {
 
 .banner {
 	position: relative;
+	height: 400px;
 	overflow: hidden;
 }
 
@@ -249,7 +253,7 @@ article button {
 .grid-container{
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
-	background-color: #fff;
+	background-color: #ffffff9c;
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.20);
 	padding: 0.700rem 0.500rem;
 	border-radius: 10px;
@@ -464,8 +468,9 @@ footer p {
 /* LES ANIMATIONS */
 
 article:hover{
-	background-color: #3f598c;
-	color: #fbbf1b;
+	background-color: #132242;
+	border: 2.5px solid #d6ac63;
+	color:#d6ac63;
 	border-radius: 10px;
 }
 
@@ -500,6 +505,10 @@ article button:hover {
 	
 	.navbar a {
 		font-size: 1rem;
+	}
+
+	.banner{
+		height: 250px;
 	}
 	
 	/* Page Accueil */
