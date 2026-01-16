@@ -90,6 +90,20 @@ h3 {
 	text-align: center;
 }
 
+/* J'utilise une fonction clamp pour définir une valeur minimum, préférée et maximum pour chacun de mes titres */
+
+h1 {
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+}
+
+h2 {
+    font-size: clamp(1.25rem, 4vw, 2rem);
+}
+
+h3 {
+    font-size: clamp(1rem, 3vw, 1.5rem);
+}
+
 
 /* LES ÉLÉMENTS GÉNÉRIQUES */
 
@@ -171,7 +185,7 @@ iframe {
 	color: white;
 	text-decoration: none;
 	white-space: nowrap;
-	font-size: 1.25rem;
+	font-size: clamp(0.75rem, 2vw, 1.25rem);
 	padding: 0.2rem 0.50rem;
 	margin: 0 1rem;
 }
@@ -223,7 +237,7 @@ article {
 
 article h3 {
 	margin: 0.75rem 0;
-	font-size: 1.10rem;
+	font-size: clamp(0.95rem, 2.5vw, 1.25rem)
 }
 
 article dl {
@@ -276,7 +290,7 @@ article button {
 }
 
 .selection-section p {
-	font-size: 1rem;
+	font-size: clamp(0.85rem, 2vw, 1rem);
 	letter-spacing: 0.2px;
 	text-align: center;
 }
@@ -290,7 +304,7 @@ article button {
 }
 
 .about-section p {
-	font-size: 1rem;
+	font-size: clamp(0.85rem, 2vw, 1rem);
 	padding: 0.600rem;
 	text-align: center;
 }
@@ -346,7 +360,7 @@ article button {
 .infos p {
 	color: #d6ac63;
 	text-align: left;
-	font-size: 1rem;
+	font-size: clamp(0.75rem, 2vw, 1rem);
 	letter-spacing: 1px;
 }
 
@@ -465,7 +479,7 @@ footer {
 
 footer p {
 	color: white;
-	font-size: 0.950rem;
+	font-size: clamp(0.85rem, 2vw, 1rem);
 }
 
 
@@ -484,7 +498,6 @@ article img:hover {
 	cursor: pointer;
 	opacity: 85%;
 }
-
 
 /* L'attribut transform permet de modifier l'apparence d'un élément, ici j'utilise scale 
    pour agrandir l'élément au survol. L'attribut transition permet de définir la durée 
@@ -506,10 +519,6 @@ article button:hover {
 	/* Header & Navigation */
 	.logo img {
 		width: 52px;
-	}
-
-	.navbar a {
-		font-size: 1rem;
 	}
 
 	.banner {
@@ -555,11 +564,6 @@ article button:hover {
 	.vertical-line {
 		display: none;
 	}
-
-	.infos p {
-		font-size: 1rem;
-	}
-
 
 	/* Page Événements */
 	.events-section {
@@ -622,11 +626,6 @@ article button:hover {
 		z-index: 999;
 	}
 
-	.navbar a {
-		margin: 0;
-		font-size: 0.75rem;
-		padding: 0.2rem 0.2rem;
-	}
 
 	.navbar.active {
 		right: 0;
@@ -688,9 +687,6 @@ article button:hover {
 		display: block;
 	}
 
-	.banner h1 {
-		font-size: 1.2rem;
-	}
 
 	/* Page Accueil */
 	.grid-container {
@@ -708,17 +704,10 @@ article button:hover {
 		width: 100%;
 	}
 
-	.selection-section p {
-		font-size: 0.9rem;
-	}
 
 	/* Page À propos */
 	.about-section {
 		padding: 1.25rem 0.600rem;
-	}
-
-	.about-section p {
-		font-size: 0.9rem;
 	}
 
 	.description {
@@ -732,11 +721,6 @@ article button:hover {
 	.vertical-line {
 		display: none;
 	}
-
-	.infos p {
-		font-size: 0.750rem;
-	}
-
 
 	.location {
 		grid-template-columns: 1fr;
