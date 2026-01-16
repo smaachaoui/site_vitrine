@@ -83,7 +83,9 @@ main {
 
 /* TYPOGRAPHIE */
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
 	margin: 0.75rem 0;
 	text-align: center;
 }
@@ -100,7 +102,8 @@ button {
 }
 
 /* Images génériques */
-.banner img, article img {
+.banner img,
+article img {
 	width: 100%;
 	height: auto;
 }
@@ -117,7 +120,8 @@ table {
 	background-color: #ccc;
 }
 
-th, td {
+th,
+td {
 	padding: 0.75rem;
 	border: 0.5px solid black;
 }
@@ -184,17 +188,15 @@ iframe {
 
 .banner {
 	position: relative;
-	height: 400px;
-	overflow: hidden;
+	height: 70vh;
+	min-height: 300px;
+	overflow: hidden; 
+	background-image: url('../images/banner.jpg');
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
 }
 
-.banner img {
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-	filter: blur(0.8px);
-	transform: scale(1.05);
-}
 
 .banner h1 {
 	position: absolute;
@@ -250,7 +252,7 @@ article button {
 }
 
 
-.grid-container{
+.grid-container {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	background-color: #ffffff9c;
@@ -282,8 +284,9 @@ article button {
 
 /* PAGE À PROPOS */
 
-.about-section h2, .about-section p{
-	color:#d6ac63;
+.about-section h2,
+.about-section p {
+	color: #d6ac63;
 }
 
 .about-section p {
@@ -312,23 +315,23 @@ article button {
 	padding: 1.25rem;
 }
 
-.gallery-picture{
+.gallery-picture {
 	max-width: 600px;
 	height: auto;
 }
 
-.picture{
+.picture {
 	padding: 0.780rem;
 }
 
-.vertical-line{
+.vertical-line {
 	width: 2px;
 	background-color: #0e2146;
 	height: 200px;
 	margin: 0.600rem;
 }
 
-.infos{
+.infos {
 	background-color: #0e2146;
 	padding: 0 0.700rem;
 	border-radius: 10px;
@@ -340,7 +343,7 @@ article button {
 	text-align: center;
 }
 
-.infos p{
+.infos p {
 	color: #d6ac63;
 	text-align: left;
 	font-size: 1rem;
@@ -410,7 +413,8 @@ table button {
 	font-weight: bold;
 }
 
-.field-group input, .field-group textarea {
+.field-group input,
+.field-group textarea {
 	padding: 0.5rem;
 	border: 1px solid black;
 	border-radius: 4px;
@@ -442,7 +446,7 @@ table button {
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
-.location-adress{
+.location-adress {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
@@ -467,16 +471,16 @@ footer p {
 
 /* LES ANIMATIONS */
 
-article:hover{
+article:hover {
 	background-color: #132242;
 	border: 2.5px solid #d6ac63;
-	color:#d6ac63;
+	color: #d6ac63;
 	border-radius: 10px;
 }
 
-article img:hover{
+article img:hover {
 	transform: scale(1.1);
-	transition: transform 0.3s ;
+	transition: transform 0.3s;
 	cursor: pointer;
 	opacity: 85%;
 }
@@ -498,74 +502,75 @@ article button:hover {
 /* TABLETTE */
 
 @media (max-width: 1023px) {
+
 	/* Header & Navigation */
 	.logo img {
 		width: 52px;
 	}
-	
+
 	.navbar a {
 		font-size: 1rem;
 	}
 
-	.banner{
-		height: 250px;
+	.banner {
+		height: 50vh;
 	}
-	
+
 	/* Page Accueil */
 	.grid-container {
 		grid-template-columns: repeat(2, minmax(0, 1fr));
 	}
-	
+
 	/* Page Sélection */
 	.selection-section {
 		gap: 1.25rem;
 	}
-	
+
 	.selection-section h1 {
 		grid-column: 1 / -1;
 	}
-	
+
 	.selection-section article {
 		width: 100%;
 	}
-	
-	/* Page À propos */
-    .about-section {
-        padding: 1.25rem 0.625rem;
-    }
-    
-    .about-section p {
-        max-width: 100%;
-        text-align: center;
-    }
-    
-    .description {
-        flex-direction: column; 
-    }
 
-	.gallery-picture{
+	/* Page À propos */
+	.about-section {
+		padding: 1.25rem 0.625rem;
+	}
+
+	.about-section p {
+		max-width: 100%;
+		text-align: center;
+	}
+
+	.description {
+		flex-direction: column;
+	}
+
+	.gallery-picture {
 		max-width: 450px;
 	}
 
-	.vertical-line{
+	.vertical-line {
 		display: none;
 	}
 
-	.infos p{
+	.infos p {
 		font-size: 1rem;
 	}
-    
-	
+
+
 	/* Page Événements */
 	.events-section {
 		padding: 1.25rem 0.625rem;
 	}
-	
+
 	.events-section p {
 		max-width: 100%;
 		text-align: center;
 	}
-	
+
 	.events-section table {
 		font-size: 0.9rem;
 	}
@@ -575,19 +580,20 @@ article button:hover {
 	.location {
 		grid-template-columns: 1fr;
 	}
-	
-	
+
+
 }
 
 
 /* MOBILE (max-width: 767px) */
 
 @media (max-width: 767px) {
+
 	/* Ajustement général */
 	body {
 		padding-top: 45px;
 	}
-	
+
 	/* Header & Navigation */
 	.header {
 		padding: 1rem;
@@ -597,11 +603,12 @@ article button:hover {
 		width: 100%;
 		z-index: 1000;
 	}
-	
+
 	.navbar {
 		position: absolute;
 		top: 100%;
-		right: -100%;  /* Le menu est bien caché à droite (hors de notre vision)*/
+		right: -100%;
+		/* Le menu est bien caché à droite (hors de notre vision)*/
 		width: 35%;
 		height: auto;
 
@@ -614,7 +621,7 @@ article button:hover {
 		padding: 1.25rem;
 		z-index: 999;
 	}
-	
+
 	.navbar a {
 		margin: 0;
 		font-size: 0.75rem;
@@ -622,17 +629,20 @@ article button:hover {
 	}
 
 	.navbar.active {
-    right: 0;  /* Glisse vers la gauche pour devenir visible */
+		right: 0;
+		/* Glisse vers la gauche pour devenir visible */
 	}
 
-	.burger-menu{
+	.burger-menu {
 		width: 40px;
 		height: 30px;
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
-		background: transparent; /* Pour enlever l'arrière plan du menu burger */
-		border: none; /* On retire les bordures de chaque côtés */
+		background: transparent;
+		/* Pour enlever l'arrière plan du menu burger */
+		border: none;
+		/* On retire les bordures de chaque côtés */
 		cursor: pointer;
 	}
 
@@ -640,20 +650,20 @@ article button:hover {
 
 	/* Je fais descendre la première barre de 11px vers le bas et je la tourne à 45° */
 	.burger-menu.active span:nth-child(1) {
-		transform: translateY(11px) rotate(45deg); 
+		transform: translateY(11px) rotate(45deg);
 	}
 
 	/* Je fais disparaître la deuxième barre avec une opacité à 0 */
 	.burger-menu.active span:nth-child(2) {
-		opacity: 0; 
+		opacity: 0;
 	}
 
 	/* Je fais remonter la 3ème barre de 16px vers le haut et je la tourne à -45° */
 	.burger-menu.active span:nth-child(3) {
-		transform: translateY(-16px) rotate(-45deg); 
+		transform: translateY(-16px) rotate(-45deg);
 	}
 
-	.burger-line{
+	.burger-line {
 		width: 100%;
 		height: 2px;
 		background: white;
@@ -661,89 +671,89 @@ article button:hover {
 		transition: 0.3s;
 	}
 
-	
+
 	/* Banner */
 	main {
 		margin-top: 0;
 	}
-	
+
 	.banner {
-		height: 140px;
+		height: 40vh;
 	}
-	
+
 	.banner img {
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
 		display: block;
 	}
-	
+
 	.banner h1 {
 		font-size: 1.2rem;
 	}
-	
+
 	/* Page Accueil */
 	.grid-container {
 		grid-template-columns: 1fr;
 	}
-	
+
 	/* Page Sélection */
 	.selection-section {
 		display: flex;
 		flex-direction: column;
 		padding: 1.25rem 0.600rem;
 	}
-	
+
 	.selection-section article {
 		width: 100%;
 	}
-	
+
 	.selection-section p {
 		font-size: 0.9rem;
 	}
-	
+
 	/* Page À propos */
 	.about-section {
 		padding: 1.25rem 0.600rem;
 	}
-	
+
 	.about-section p {
 		font-size: 0.9rem;
 	}
-	
-	 .description {
-        flex-direction: column; 
-    }
 
-	.gallery-picture{
+	.description {
+		flex-direction: column;
+	}
+
+	.gallery-picture {
 		max-width: 320px;
 	}
 
-	.vertical-line{
+	.vertical-line {
 		display: none;
 	}
 
-	.infos p{
+	.infos p {
 		font-size: 0.750rem;
 	}
-    
-	
+
+
 	.location {
 		grid-template-columns: 1fr;
 	}
-	
+
 	/* Page Événements */
 	.events-section {
 		align-items: stretch;
 	}
-	
+
 	.events-section table {
 		width: 100%;
 	}
-	
-	.events-section th:nth-child(4), 
-	.events-section td:nth-child(4), 
-	.events-section th:nth-child(3), 
+
+	.events-section th:nth-child(4),
+	.events-section td:nth-child(4),
+	.events-section th:nth-child(3),
 	.events-section td:nth-child(3) {
 		display: none;
 	}
