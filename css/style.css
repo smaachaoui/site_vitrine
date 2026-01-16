@@ -590,7 +590,7 @@ article button:hover {
 	
 	/* Header & Navigation */
 	.header {
-		padding: 0.75rem;
+		padding: 1rem;
 		position: fixed;
 		top: 0;
 		left: 0;
@@ -598,15 +598,21 @@ article button:hover {
 		z-index: 1000;
 	}
 	
-	.logo {
-		display: none;
-	}
-	
 	.navbar {
-		width: 100%;
-		padding: 0;
-		justify-content: center;
-		gap: 0.2rem;
+		position: absolute;
+		top: 100%;
+		right: -100%;  /* Le menu est bien caché à droite (hors de notre vision)*/
+		width: 35%;
+		height: auto;
+
+		background: #222;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: center;
+		transition: right 0.5s ease;
+		padding: 1.25rem;
+		z-index: 999;
 	}
 	
 	.navbar a {
@@ -614,6 +620,47 @@ article button:hover {
 		font-size: 0.75rem;
 		padding: 0.2rem 0.2rem;
 	}
+
+	.navbar.active {
+    right: 0;  /* Glisse vers la gauche pour devenir visible */
+	}
+
+	.burger-menu{
+		width: 40px;
+		height: 30px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		background: transparent; /* Pour enlever l'arrière plan du menu burger */
+		border: none; /* On retire les bordures de chaque côtés */
+		cursor: pointer;
+	}
+
+	/* Je forme une croix avec les lignes du menu burger */
+
+	/* Je fais descendre la première barre de 11px vers le bas et je la tourne à 45° */
+	.burger-menu.active span:nth-child(1) {
+		transform: translateY(11px) rotate(45deg); 
+	}
+
+	/* Je fais disparaître la deuxième barre avec une opacité à 0 */
+	.burger-menu.active span:nth-child(2) {
+		opacity: 0; 
+	}
+
+	/* Je fais remonter la 3ème barre de 16px vers le haut et je la tourne à -45° */
+	.burger-menu.active span:nth-child(3) {
+		transform: translateY(-16px) rotate(-45deg); 
+	}
+
+	.burger-line{
+		width: 100%;
+		height: 2px;
+		background: white;
+		border-radius: 3px;
+		transition: 0.3s;
+	}
+
 	
 	/* Banner */
 	main {
