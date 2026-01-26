@@ -86,8 +86,9 @@ main {
 h1,
 h2,
 h3 {
-	margin: 0.75rem 0;
+	margin: 1.25rem 0;
 	text-align: center;
+	padding: 0.75rem;
 }
 
 /* J'utilise une fonction clamp pour définir une valeur minimum, préférée et maximum pour chacun de mes titres */
@@ -394,7 +395,8 @@ table button {
 	flex-direction: column;
 	align-items: center;
 	gap: 1.25rem;
-	padding: 1.25rem;
+	padding: 0.5rem;
+	margin: 1.5rem;
 }
 
 .contact-section h1 {
@@ -432,12 +434,12 @@ table button {
 	padding: 0.5rem;
 	border: 1px solid black;
 	border-radius: 4px;
-	background-color: #dddddd;
+	background-color: #ebebeb;
 	font-size: 1rem;
 }
 
 .field-group textarea {
-	background-color: #dddddd;
+	background-color: #efefef;
 }
 
 /* Bouton du formulaire */
@@ -729,6 +731,7 @@ article button:hover {
 	/* Page Événements */
 	.events-section {
 		align-items: stretch;
+		margin: 1.25rem;
 	}
 
 	.events-section table {
